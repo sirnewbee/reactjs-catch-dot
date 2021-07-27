@@ -1,0 +1,10 @@
+#current-datetime{
+  color: #000c25;
+  font-family: "ZenTokyoZooReg";
+  font-weight: 500;
+  font-size: 2vw;
+}
+
+.current-time-container, .current-date-container{
+  transition: width 2s, height 2s, transform 2s;
+}
