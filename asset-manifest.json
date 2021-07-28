@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/reactjs-catch-dot/static/css/main.c3502ea4.chunk.css",
+    "main.js": "/reactjs-catch-dot/static/js/main.30efd1f7.chunk.js",
+    "main.js.map": "/reactjs-catch-dot/static/js/main.30efd1f7.chunk.js.map",
+    "runtime-main.js": "/reactjs-catch-dot/static/js/runtime-main.6b0a6d2e.js",
+    "runtime-main.js.map": "/reactjs-catch-dot/static/js/runtime-main.6b0a6d2e.js.map",
+    "static/css/2.4be38407.chunk.css": "/reactjs-catch-dot/static/css/2.4be38407.chunk.css",
+    "static/js/2.9bcb46a0.chunk.js": "/reactjs-catch-dot/static/js/2.9bcb46a0.chunk.js",
+    "static/js/2.9bcb46a0.chunk.js.map": "/reactjs-catch-dot/static/js/2.9bcb46a0.chunk.js.map",
+    "static/js/3.4d834afb.chunk.js": "/reactjs-catch-dot/static/js/3.4d834afb.chunk.js",
+    "static/js/3.4d834afb.chunk.js.map": "/reactjs-catch-dot/static/js/3.4d834afb.chunk.js.map",
+    "index.html": "/reactjs-catch-dot/index.html",
+    "static/css/2.4be38407.chunk.css.map": "/reactjs-catch-dot/static/css/2.4be38407.chunk.css.map",
+    "static/css/main.c3502ea4.chunk.css.map": "/reactjs-catch-dot/static/css/main.c3502ea4.chunk.css.map",
+    "static/js/2.9bcb46a0.chunk.js.LICENSE.txt": "/reactjs-catch-dot/static/js/2.9bcb46a0.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/reactjs-catch-dot/static/media/ZenTokyoZoo-Regular.1204a71d.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6b0a6d2e.js",
+    "static/css/2.4be38407.chunk.css",
+    "static/js/2.9bcb46a0.chunk.js",
+    "static/css/main.c3502ea4.chunk.css",
+    "static/js/main.30efd1f7.chunk.js"
+  ]
+}
