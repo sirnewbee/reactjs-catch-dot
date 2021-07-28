@@ -7,6 +7,11 @@ class Main extends React.Component {
   render(){
     return (
       <div id="main-page">
+        <div className="warning-texts">
+          <span>READY</span>
+          <br/>
+          <span>GO!</span>
+        </div>
         <div className="current-datetime-container">
           <CurrentDateTime/>
         </div>

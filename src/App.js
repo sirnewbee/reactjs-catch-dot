@@ -4,38 +4,64 @@ import $ from 'jquery';
 import Main from './components/main/main.js';
 import RandomSpinner from './components/spinners/random_spinner.js';
 
+const countdown_timer = 30;
 const current_pages = {
-  countdown: 30,
+  countdown: countdown_timer,
   score: 0,
   clickActions: function(){
     $('#main-page').unbind('click');
     $('#main-page').click(function(){
-      $('.current-datetime-container')[0].style.transform = "translate(500%,0px)";
-      $('.logo-container')[0].style.transform = "translate(-500%,0px)";
-      setTimeout(function(){
-        $('#main-page').css({display: 'none'});
-        $('.spinner-container').css({display: 'block'});
-      }, 4500);
+      $('.current-datetime-container')[0].style.transform = "translate(300%,0px)";
+      $('.logo-container')[0].style.transform = "translate(-300%,0px)";
+      $('#random-spinner-score span').text(0);
+      $('.warning-texts span:first-child').css({display: 'block'});
+
+      current_pages.countdown = countdown_timer;
+      $('#spinner-timer').text(countdown_timer);
 
       setTimeout(function(){
+        $('.warning-texts span:first-child').css({display: 'none'});
+        $('.warning-texts span:last-child').css({display: 'block'});
+      },3000);
+
+      setTimeout(function(){
+        $('.warning-texts span:last-child').css({display: 'none'});
+        $('#main-page').css({display: 'none'});
         current_pages.countdownTimer();
+        $('.spinner-container').css({display: 'block'});
+        $('#random-spinner').css({display: 'block'});
       }, 4500);
-      //Revert
-      // $('#current-datetime').style.left = "50%";
-      // $('#current-datetime').style.transform = "translate(-50%,0px)";
+      // 4500
     });
 
     $('#random-spinner').unbind('click');
     $('#random-spinner').click(function(){
       $('#random-spinner-score span').text(++current_pages.score);
     });
+
+    $('#return-button').unbind('click');
+    $('#return-button').click(function(){
+      $('.spinner-container').css({display: 'none'});
+      $('#main-page').css({display: 'block'});
+      $('#return-button').css({display: 'none'});
+      current_pages.score = 0;
+      
+      setTimeout(function(){
+        $('.current-datetime-container').css({left: '50%', transform: 'translate(-50%, 0px)'});
+        $('.logo-container').css({left: '50%', transform: 'translate(-50%, 0px)'});
+      }, 300);
+
+      $(this).css({display: 'none'});
+    });
   },
   countdownTimer: function(){
     var countdown_interval = setInterval(() => {
       if(current_pages.countdown >= 0){
-        console.log(--current_pages.countdown);
+        $('#spinner-timer').text(current_pages.countdown--);
       }else{
         clearInterval(countdown_interval);
+        $('#return-button').css({display: 'block'});
+        $('#random-spinner').css({display: 'none'});
       }
     }, 1000);
   },

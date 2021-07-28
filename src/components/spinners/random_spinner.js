@@ -1,5 +1,5 @@
 import React from 'react';
-import {Spinner} from 'react-bootstrap';
+import {Spinner, Button} from 'react-bootstrap';
 import $ from 'jquery';
 
 const current_pages = {
@@ -24,8 +24,16 @@ const current_pages = {
     $('#random-spinner').animate({ top: newq[0], left: newq[1] }, function(){
       setTimeout(function(){
         current_pages.animateDiv();   
-      },500);     
-    });  
+      },200);     
+    });
+    
+    setInterval(function(){
+      if($('.random-spinner-instructions')[0].style.visibility == "visible"){
+        $('.random-spinner-instructions').css({visibility:'hidden'});
+      }else{
+        $('.random-spinner-instructions').css({visibility:'visible'});
+      }
+    }, 1000)
   },
   run: function(){
     current_pages.makeNewPosition();
@@ -51,10 +59,13 @@ class RandomSpinner extends React.Component{
   render(){
     return(
       <div className="spinner-container">
-        <div id="spinner-timer"></div>
+        <div id="spinner-timer">0</div>
         <div className="spinner-texts-container">
-          <div className="random-spinner-instructions">CATCH THE DOT</div>
+          <div className="random-spinner-instructions">CATCH THE DOT!</div>
           <div id="random-spinner-score">SCORE: <span>0</span></div>
+          <div id="actions-container">
+            <Button variant="warning" id="return-button">RETURN</Button>
+          </div>
         </div>
         <div id="random-spinner">
           <Spinner animation="grow" variant={this.state.color}/>
